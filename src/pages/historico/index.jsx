@@ -1,8 +1,12 @@
 import './style.css';
+import Navbar from '../../components/navbar/index.jsx';
 
 
 function Historico() {
-    return <h1>Histórico</h1>
+    return <>
+        <Navbar tela="historico"/>
+    </>
+    
 };
 
 

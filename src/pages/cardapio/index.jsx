@@ -1,8 +1,11 @@
 import './style.css';
+import Navbar from '../../components/navbar/index.jsx';
 
 
 function Cardapio() {
-    return <h1>Cardapio</h1>
+    return <>
+        <Navbar tela="cardapio" />
+    </>
 };
 
 

@@ -1,8 +1,12 @@
 import './style.css';
+import Navbar from '../../components/navbar/index.jsx';
 
 
 function Pedidos() {
-    return <h1>Pedidos</h1>
+    return <>
+        <Navbar tela="pedidos"/>
+    </>
+    
 };
 
 

@@ -1,8 +1,11 @@
 import './style.css';
+import Navbar from '../../components/navbar/index.jsx';
 
 
 function Home() {
-    return <h1>Home</h1>
+    return (
+        <Navbar tela="/"/>
+    );
 };
 
 
