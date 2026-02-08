@@ -22,8 +22,7 @@ function Login() {
                     <div className='form-floating'>
                         <input 
                             className='form-control'
-                            type="email" 
-                            name="floatingInputEmail" 
+                            type="email"                             
                             id="floatingInputEmail" 
                             placeholder='E-mail'
                         />
@@ -32,15 +31,14 @@ function Login() {
                     <div className='form-floating'>
                         <input 
                             className='form-control'
-                            type="password" 
-                            name="floatingInputSenha" 
+                            type="password"                             
                             id="floatingInputSenha" 
                             placeholder='Senha'
                         />
                         <label htmlFor="floatingInputSenha">Senha</label>
                     </div> 
 
-                    <button onClick={ProcessaLogin} className='w-100 btn btn-lg btn-danger mt-3'>
+                    <button onClick={ProcessaLogin} className='w-100 btn btn-lg btn-danger'>
                         <span className='ms-2'>Acessar</span>    
                     </button>  
 
@@ -51,7 +49,9 @@ function Login() {
                     <img src={Logo} alt="Delivery Mais" className='mt-5' />
                 </form>
             </div>
-            <div className='col-sm-6 px-0 d-none d-sm-block bg-danger'>
+
+            
+            <div className='col-sm-6 px-0 d-none d-sm-block'>
                 <img className='background-login' src={Fundo} alt="Delivery Mais" />
             </div>
         </div>
