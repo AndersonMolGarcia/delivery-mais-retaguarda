@@ -94,7 +94,7 @@ function Pedido(props) {
                             </ul>
                         </div>
                         :
-                        <button className='btn btn-secondary'><i className='fas fa-arrow-left'></i>Reabrir Pedido</button>
+                        <button className='btn btn-outline-danger'><i className='fas fa-arrow-left'></i>Reabrir Pedido</button>
                 }
             </div>
         </div>
