@@ -1,12 +1,14 @@
 import './style.css';
 import Navbar from '../../components/navbar/index.jsx';
 import Produto from '../../components/produto/index.jsx';
+import Categoria from '../../components/categoria/index.jsx';
 
 
 function Cardapio() {
 
     const cardapio = [
         {
+            id_categoria: 1,
             categoria: "Lanches",
             produtos: [
                 { id_produto: 1, descricao: 'X-Salada', valor: 19.90, url_foto: "https://jornada-dev2.s3.amazonaws.com/xsalada.jpg" },
@@ -15,6 +17,7 @@ function Cardapio() {
             ]
         },
         {
+            id_categoria: 2,
             categoria: "Bebidas",
             produtos: [
                 { id_produto: 4, descricao: 'Coca-Cola', valor: 6.00, url_foto: "https://jornada-dev2.s3.amazonaws.com/coca-cola.png" },
@@ -22,6 +25,7 @@ function Cardapio() {
             ]
         },
         {
+            id_categoria: 3,
             categoria: "Sobremesa",
             produtos: []
         }
@@ -46,7 +50,12 @@ function Cardapio() {
                         return <>
                             <ul className='list-group'>
 
-                                {item.categoria}
+                                <Categoria 
+                                    key={item.categoria}
+                                    id_categoria={item.id_categoria}
+                                    nome={item.categoria}
+                                />
+
 
 
                                 {
