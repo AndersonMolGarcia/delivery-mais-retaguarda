@@ -18,7 +18,7 @@ function Produto(props) {
                             >
                                 <div className='ps-2'><i className='fas fa-ellipsis-v'></i></div>
                             </a>
-                            <ul className='dropdown-menu' aria-labelledby={`dropdownMenuLinks${props.id_produto}`}>
+                            <ul className='dropdown-menu pointer-cursor' aria-labelledby={`dropdownMenuLinks${props.id_produto}`}>
                                 <li><a className='dropdown-item'>Editar Produto</a></li>
                                 <li><hr className='dropdown-divider' /></li>
                                 <li><a className='dropdown-item'>Excluir Produto</a></li>
