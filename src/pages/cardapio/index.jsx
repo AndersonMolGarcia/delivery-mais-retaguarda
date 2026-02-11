@@ -2,9 +2,13 @@ import './style.css';
 import Navbar from '../../components/navbar/index.jsx';
 import Produto from '../../components/produto/index.jsx';
 import Categoria from '../../components/categoria/index.jsx';
+import CategoriaModal from '../../components/categoria-modal/index.jsx';
+import { useState } from 'react';
 
 
 function Cardapio() {
+
+    const [isCategoriaOpen, setIsCategoriaOpen] = useState(false);
 
     const cardapio = [
         {
@@ -32,14 +36,29 @@ function Cardapio() {
 
     ];
 
+    function OpenMoldalCategoria(id_categoria) {
+        setIsCategoriaOpen(true);
+    }
+
+    function CloseMoldalCategoria(id_categoria) {
+        setIsCategoriaOpen(false);
+    }
+
     return <>
         <Navbar tela="cardapio" />
+
+        <CategoriaModal 
+            isOpen={isCategoriaOpen}
+            onRequestClose={CloseMoldalCategoria}
+        />
 
         <div className='container-fluid mt-page'>
 
             <div className='m-2 mt-4 mb-4 d-flex justify-content-between'>
                 <h2>Cardápio</h2>
-                <button className='btn btn-outline-danger ms-4'><i className='fas fa-plus'></i>Adicionar Categoria</button>
+                <button onClick={(e) => OpenMoldalCategoria(0)} className='btn btn-outline-danger ms-4'>
+                    <i className='fas fa-plus'></i>Adicionar Categoria
+                </button>
             </div>
 
             <div className='m-2 mt-4'>
