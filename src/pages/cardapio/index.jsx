@@ -4,6 +4,8 @@ import Produto from '../../components/produto/index.jsx';
 import Categoria from '../../components/categoria/index.jsx';
 import CategoriaModal from '../../components/categoria-modal/index.jsx';
 import { useState } from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css' ;
 
 
 function Cardapio() {
@@ -44,6 +46,23 @@ function Cardapio() {
         setIsCategoriaOpen(false);
     }
 
+    function ExcluirCategoria(id_categoria) {
+        confirmAlert({
+            title: 'Exclusão',
+            message: 'Confirma exclusão da categoria?',
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: () => alert(id_categoria)
+                },
+                {
+                    label: 'Não',
+                    onClick: () => {}
+                }
+            ]
+        });    
+    };
+
     return <>
         <Navbar tela="cardapio" />
 
@@ -73,6 +92,8 @@ function Cardapio() {
                                     key={item.categoria}
                                     id_categoria={item.id_categoria}
                                     nome={item.categoria}
+                                    onClickEditar={OpenMoldalCategoria}
+                                    onClickExcluir={ExcluirCategoria}
                                 />
 
 
