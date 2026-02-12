@@ -3,14 +3,19 @@ import Navbar from '../../components/navbar/index.jsx';
 import Produto from '../../components/produto/index.jsx';
 import Categoria from '../../components/categoria/index.jsx';
 import CategoriaModal from '../../components/categoria-modal/index.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css' ;
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import ProdutoModal from '../../components/produto-modal/index.jsx';
 
 
 function Cardapio() {
 
     const [isCategoriaOpen, setIsCategoriaOpen] = useState(false);
+    const [isProdutoOpen, setIsProdutoOpen] = useState(false);
+
+    const [categorias, setCategorias] = useState([]);
+
 
     const cardapio = [
         {
@@ -57,18 +62,59 @@ function Cardapio() {
                 },
                 {
                     label: 'Não',
+                    onClick: () => { }
+                }
+            ]
+        });
+    };
+
+    function OpenMoldalProduto(id_produto) {
+        setIsProdutoOpen(true);
+    }
+
+    function CloseModalProduto(id_produto) {
+        setIsProdutoOpen(false);
+    }
+
+    function ExcluirProduto(id_produto) {
+        confirmAlert({
+            title: 'Exclusão',
+            message: 'Confirma exclusão do produto?',
+            buttons:[
+                {
+                    label: 'Sim',
+                    onClick: () => alert(id_produto)
+                },
+                {
+                    label: 'Não',
                     onClick: () => {}
                 }
             ]
-        });    
+        });
     };
+
+    useEffect(() => {
+        setCategorias([
+            {id_categoria: 1, categoria: "Lanches"},
+            {id_categoria: 2, categoria: "Bebidas"},
+            {id_categoria: 3, categoria: "Sobremesa"}
+        ])        
+    }, []);
+
 
     return <>
         <Navbar tela="cardapio" />
 
-        <CategoriaModal 
+        <CategoriaModal
             isOpen={isCategoriaOpen}
             onRequestClose={CloseMoldalCategoria}
+        />
+
+        <ProdutoModal
+            isOpen={isProdutoOpen}
+            onRequestClose={CloseModalProduto}
+            categorias={categorias}
+            id_categoria={0}
         />
 
         <div className='container-fluid mt-page'>
@@ -88,7 +134,7 @@ function Cardapio() {
                         return <>
                             <ul className='list-group'>
 
-                                <Categoria 
+                                <Categoria
                                     key={item.categoria}
                                     id_categoria={item.id_categoria}
                                     nome={item.categoria}
@@ -106,13 +152,16 @@ function Cardapio() {
                                             url_foto={produto.url_foto}
                                             nome={produto.descricao}
                                             valor_unit={produto.valor}
+                                            onClickEditar={OpenMoldalProduto}
+                                            onClickExcluir={ExcluirProduto}
+                                            
                                         />
                                     })
                                 }
 
 
                             </ul>
-                            <button className='btn btn-outline-danger mt-2 mb-5'>Adicionar Produto</button>
+                            <button className='btn btn-outline-danger mt-2 mb-5' onClick={(e) => OpenMoldalProduto(0)}>Adicionar Produto</button>
                         </>
 
 
