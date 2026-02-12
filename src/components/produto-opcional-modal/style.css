@@ -1,0 +1,9 @@
+.produto-opcional {
+    background-color: #f0f0f0;    
+}
+
+.scroll {
+    height: 450px;
+    overflow: auto;
+    overflow-x: hidden;
+}

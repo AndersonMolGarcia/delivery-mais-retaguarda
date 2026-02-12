@@ -7,12 +7,14 @@ import { useEffect, useState } from 'react';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import ProdutoModal from '../../components/produto-modal/index.jsx';
+import ProdutoOpcionalModal from '../../components/produto-opcional-modal/index.jsx';
 
 
 function Cardapio() {
 
     const [isCategoriaOpen, setIsCategoriaOpen] = useState(false);
     const [isProdutoOpen, setIsProdutoOpen] = useState(false);
+    const [isProdutoOpcionalOpen, setIsProdutoOpcionalOpen] = useState(false);
 
     const [categorias, setCategorias] = useState([]);
 
@@ -93,6 +95,14 @@ function Cardapio() {
         });
     };
 
+    function OpenModalProdutoOpcional(id_produto) {
+        setIsProdutoOpcionalOpen(true);
+    }
+
+    function CloseModalProdutoOpcional(id_produto) {
+        setIsProdutoOpcionalOpen(false);
+    }
+
     useEffect(() => {
         setCategorias([
             {id_categoria: 1, categoria: "Lanches"},
@@ -115,6 +125,12 @@ function Cardapio() {
             onRequestClose={CloseModalProduto}
             categorias={categorias}
             id_categoria={0}
+        />
+
+        <ProdutoOpcionalModal 
+            isOpen={isProdutoOpcionalOpen}
+            onRequestClose={CloseModalProdutoOpcional}
+            id_produto={0}
         />
 
         <div className='container-fluid mt-page'>
@@ -154,6 +170,7 @@ function Cardapio() {
                                             valor_unit={produto.valor}
                                             onClickEditar={OpenMoldalProduto}
                                             onClickExcluir={ExcluirProduto}
+                                            onClickOpcional={OpenModalProdutoOpcional}
                                             
                                         />
                                     })

@@ -20,6 +20,7 @@ function Produto(props) {
                             </a>
                             <ul className='dropdown-menu pointer-cursor' aria-labelledby={`dropdownMenuLinks${props.id_produto}`}>
                                 <li><a className='dropdown-item' onClick={(e) => props.onClickEditar(props.id_produto)}>Editar Produto</a></li>
+                                <li><a className='dropdown-item' onClick={(e) => props.onClickOpcional(props.id_produto)}>Opcionais</a></li>
                                 <li><hr className='dropdown-divider' /></li>
                                 <li><a className='dropdown-item' onClick={(e) => props.onClickExcluir(props.id_produto)}>Excluir Produto</a></li>
                             </ul>

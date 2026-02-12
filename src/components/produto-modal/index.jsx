@@ -135,7 +135,7 @@ function ProdutoModal(props) {
             <div className="col-12 mt-3 d-flex justify-content-end">
                 <div>
                     <button className="btn btn-danger ms-4">Salvar</button>
-                    <button className="btn btn-outline-danger ms-2">Cancelar</button>
+                    <button className="btn btn-outline-danger ms-2" onClick={props.onRequestClose}>Cancelar</button>
 
                 </div>
             </div>
