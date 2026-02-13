@@ -7,6 +7,7 @@ import Pedidos   from './pages/pedidos/index.jsx';
 import Historico from './pages/historico/index.jsx';
 import Perfil from "./pages/perfil/index.jsx";
 import Senha from "./pages/senha/index.jsx";
+import Estabelecimento from "./pages/estabelecimento/index.jsx";
 
 
 function Rotas() {
@@ -18,8 +19,9 @@ function Rotas() {
             <Route path="/cardapio"  element={<Cardapio/>}/>
             <Route path="/pedidos"   element={<Pedidos/>}/>
             <Route path="/historico" element={<Historico/>}/>
-            <Route path="/perfil" element={<Perfil/>}/>
-            <Route path="/senha" element={<Senha/>}/>
+            <Route path="/perfil"    element={<Perfil/>}/>
+            <Route path="/senha"     element={<Senha/>}/>
+            <Route path="/estabelecimento" element={<Estabelecimento/>}/>
         </Routes>
     </BrowserRouter>
 };

@@ -49,7 +49,7 @@ function Navbar(props) {
                             <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" to="/perfil">Meu Perfil</Link></li>
                                 <li><Link className='dropdown-item' to="/senha">Alterar Senha</Link></li>
-                                <li><a className="dropdown-item" href="#">Estabelecimento</a></li>
+                                <li><Link className="dropdown-item" to="/estabelecimento">Estabelecimento</Link></li>
                                 <li><hr className='dropdown-divider'/></li>
                                 <li><a href="/login" className='dropdown-item'>Sair</a></li>
                             </ul>
