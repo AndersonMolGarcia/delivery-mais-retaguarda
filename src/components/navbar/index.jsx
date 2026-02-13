@@ -47,7 +47,7 @@ function Navbar(props) {
                                 <i className='fas fa-user'></i>Heber Mazutti
                             </button>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Meu Perfil</a></li>
+                                <li><Link className="dropdown-item" to="/perfil">Meu Perfil</Link></li>
                                 <li><a className="dropdown-item" href="#">Estabelecimento</a></li>
                                 <li><hr className='dropdown-divider'/></li>
                                 <li><a href="/login" className='dropdown-item'>Sair</a></li>
